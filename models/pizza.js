@@ -1,25 +1,23 @@
-const { schema, model} = require('mongoose');
-const pizzaSchema = new schema ({
+const { Schema, model } = require('mongoose');
+
+const PizzaSchema = new Schema({
   pizzaName: {
-    type:String
+    type: String
   },
   createdBy: {
     type: String
   },
   createdAt: {
     type: Date,
-    default: Datenow
+    default: Date.now
   },
   size: {
     type: String,
-    default: 'Large',
+    default: 'Large'
   },
-  toppings:[]
+  toppings: []
 });
 
+const Pizza = model('Pizza', PizzaSchema);
 
-//create the pizza model using the Pizza Schema
-const pizza = model('Pizza', pizzaSchema);
-
-//export the Pizza model
-module.exports = pizza;
+module.exports = Pizza;

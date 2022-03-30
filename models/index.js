@@ -1,9 +1,3 @@
-const pizza = require('./pizza');
+const Pizza = require('./Pizza');
 
-
-
-
-
-
-
-module.exports = { pizza };
+module.exports = { Pizza };
